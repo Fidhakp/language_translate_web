@@ -1,0 +1,32 @@
+{% extends 'translator/base.html' %}
+
+{% block title %}Choose Your Translation Options{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Welcome, {{ user.username }}!</h1>
+        <p>Choose an option below:</p>
+
+        <a href="{% url 'upload_image' %}">
+            <button class="btn btn-success w-100">Image Text Translation</button> <!--  Matches Register page style -->
+        </a>
+<br>
+<br>
+        <a href="{% url 'translate_text' %}">
+            <button class="btn btn-primary w-100">Text Translation</button> <!-- Consistent with Bootstrap styles -->
+        </a>
+
+        {% if extracted_text %}
+        <div class="output">
+            <h3>Extracted Text:</h3>
+            <p>{{ extracted_text }}</p>
+        </div>
+        {% endif %}
+
+        <!--  Home Button (Styled to Match Other Buttons) -->
+        <a href="{% url 'home' %}">
+            <button class="btn btn-secondary w-100 mt-3">Home</button>
+        </a>
+
+    </div>
+{% endblock %}

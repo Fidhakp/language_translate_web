@@ -1,0 +1,42 @@
+body {
+    background-image: url("/static/assets/background.jpg"); /*  Absolute path */
+    background-size: cover; /* Ensures full-screen coverage */
+    background-position: center;
+    background-attachment: fixed; /* Keeps background fixed when scrolling */
+    font-family: 'Poppins', sans-serif;
+    color: hsl(0, 0%, 100%);
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+span {
+    display: none; /* ✅ Hides the instruction text */
+}
+
+
+/* 📦 Container Styling */
+.container {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    width: 50%;
+    margin: auto;
+    backdrop-filter: blur(5px);
+}
+
+/* 🎯 Custom Buttons */
+.btn-custom {
+    background: #ff6b6b;
+    color: rgb(130, 118, 118);
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-custom:hover {
+    transform: scale(1.1);
+    background: #ff4757;
+}

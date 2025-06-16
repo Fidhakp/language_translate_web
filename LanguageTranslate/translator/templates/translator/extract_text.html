@@ -1,0 +1,32 @@
+{% extends 'translator/base.html' %}
+
+{% block title %}Extract Text{% endblock %}
+
+{% block content %}
+    <h1>Extracted Text</h1>
+
+    {% if extracted_text %}
+       <div class="highlight-text" style="background-color: #9dbbd6; padding: 10px; border-radius: 5px;">
+    <p><strong>{{ extracted_text }}</strong></p>
+</div>
+    {% else %}
+        <p>No text extracted yet. Please upload an image.</p>
+    {% endif %}
+
+    <!-- Single form for both image upload and language selection -->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <!-- Image Upload Field -->
+        <label for="image">Upload an Image:</label>
+        {{ form.image }}
+
+        <!-- Language Selection Dropdown -->
+        <label for="language">Select Language:</label>
+        {{ form.language }}
+
+        <button type="submit" class="btn btn-success w-100">Extract Text</button> <!--  Matching button style -->
+    </form>
+
+    <a href="{% url 'dashboard' %}" class="btn btn-primary w-100 mt-3">Back to Dashboard</a> <!-- Styled like Register page -->
+{% endblock %}

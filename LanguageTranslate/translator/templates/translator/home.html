@@ -1,0 +1,12 @@
+{% extends 'translator/base.html' %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h1 class="text-primary">Welcome to Language Translate 🌍</h1>
+    <p>Translate text effortlessly with our easy-to-use platform.</p>
+    <a href="{% url 'register' %}" class="btn btn-success btn-lg">Register</a>
+    <a href="{% url 'login' %}" class="btn btn-primary btn-lg">Login</a>
+</div>
+{% endblock %}
